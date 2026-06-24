@@ -1,0 +1,10 @@
+Package: tabswift
+Title: Reticulated Package for TabSwift
+Version: 0.0.0.9000
+Authors@R: 
+    person("frank", "hull", , "frankiethull@proton.me", role = c("aut", "cre"))
+Description: "TabSwift is a tabular foundation model based on in-context learning (ICL). Given a set of labeled training samples, TabSwift makes predictions on test samples directly through forward inference — no fine-tuning required. The model jointly supports classification and regression tasks with a single pre-trained checkpoint."
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

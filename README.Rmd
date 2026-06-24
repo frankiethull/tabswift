@@ -1,29 +1,38 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # tabswift
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
-The goal of tabswift is to provide R bindings to TabSwift, a row-wise
-in-context-learning tabular foundation model.
+The goal of tabswift is to provide R bindings to TabSwift, a row-wise in-context-learning tabular foundation model. 
 
-For more information, please visit the official repository:
-<https://github.com/LAMDA-Tabular/TabSwift>
+For more information, please visit the official repository: https://github.com/LAMDA-Tabular/TabSwift
 
 ## Installation
 
 You can install the development version of tabswift like so:
 
-``` r
+```r
 pak::pak("frankiethull/tabswift")
 ```
 
 ## Example
 
-``` r
+```{r example}
 library(tabswift)
 library(rsample)
 
@@ -37,7 +46,7 @@ test <- testing(corn_splits)
 
 ### Classification
 
-``` r
+```{r, eval=FALSE}
 fit_cls <- swift_fit(
   train |> dplyr::select(-type), train$type,
   n_estimators = 5L,
@@ -47,9 +56,10 @@ fit_cls <- swift_fit(
 class_preds <- swift_predict(fit_cls, test |> dplyr::select(-type))
 ```
 
+
 ### Regression
 
-``` r
+```{r, eval=FALSE}
 fit_reg <- swift_fit(
   train |> dplyr::select(-height, -type), train$height, 
   problem_type = "regression", 
